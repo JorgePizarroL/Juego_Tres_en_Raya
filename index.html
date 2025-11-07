@@ -11,6 +11,7 @@
     </header>
 
     <main>
+
         <!-- Formulario de registro-->
          <section id="inicio">
             <h2>Empezar a Jugar</h2>
@@ -31,6 +32,7 @@
                 <button type="submit">Iniciar Juego</button>
             </form>
          </section>
+
          <!--Creacion del panel de juego-->
          <section id="juego" hidden>
             <div id="turno" aria-live="polite"></div>
@@ -41,6 +43,29 @@
                 <button id="boton_nuevo">Juego Nuevo</button>
             </div>
          </section>
+
+         <!--Historial de partidas-->
+         <section id="historial">
+            <h2>Historial de partidas</h2>
+
+            <div class="filtros">
+                <label for="filtro-ganador">Ganador:</label>
+                <select id="filtro-ganador">
+                    <option value="todos">Todos</option>
+                    <option value="X">Jugador 1</option>
+                    <option value="O">Jugador 2</option>
+                    <option value="Empate">Empate</option>
+                </select>
+
+                <label for="filtro-inicio">Desde:</label>
+                <input type="date" id="filtro-inicio">
+
+                <label for="filtro-fin">Hasta:</label>
+                <input type="date" id="filtro-fin">
+
+                <button id="btn-filtrar">Filtrar</button>
+            </div>
+        </section>
     </main>
 
 </body>
