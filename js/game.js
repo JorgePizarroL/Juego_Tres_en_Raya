@@ -128,13 +128,14 @@ function terminarPartida(mensaje) {
 
     const duracion = Math.floor((Date.now() - tiempoInicio) / 1000);
     const registro = {
-        jugador1,
-        jugador2,
-        ganador: mensaje.includes('gana') ? jugadorActual : 'Empate',
-        duracion: `${Math.floor(duracion / 60)}:${String(duracion % 60).padStart(2, '0')}`,
-        movimientos,
-        fecha: new Date().toISOString()
-    };
+      jugador1,
+      jugador2,
+      ganador: mensaje.includes('gana') ? obtenerNombre(jugadorActual) : 'Empate',
+      duracion: `${Math.floor(duracion / 60)}:${String(duracion % 60).padStart(2, '0')}`,
+      movimientos,
+      fecha: new Date().toISOString()
+    } ;
+
     guardarPartida(registro);
     mostrarHistorial();
 }
