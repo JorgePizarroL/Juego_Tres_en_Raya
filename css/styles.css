@@ -1,88 +1,104 @@
-body{
-
+body {
     font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f2f2f2;
-  color: #333;
-
+    margin: 0;
+    background: #f2f2f2;
+    color: #333;
 }
 
-header, footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.marco {
+    border: 3px solid #333;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #fff;
+    max-width: 650px;
+    margin: 1rem auto;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
 
 main {
-  padding: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
+    padding: 1rem;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 button {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 #tablero {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 1rem auto;
 }
 
 .celda {
-  background: white;
-  border: 2px solid #333;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    background: white;
+    border: 2px solid #333;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .celda:disabled {
-  background: #ddd;
+    background: #ddd;
 }
 
 .celda:focus-visible {
-  outline: 3px solid orange;
+    outline: 3px solid orange;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
 th, td {
-  border: 1px solid #999;
-  padding: 0.3rem;
-  text-align: center;
+    border: 1px solid #999;
+    padding: 0.3rem;
+    text-align: center;
 }
 
 tr:nth-child(even) {
-  background: #eee;
+    background: #eee;
 }
 
 .botones {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 500px) {
-  #tablero {
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(3, 80px);
-  }
+    #tablero {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
 }
+
