@@ -1,90 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRES EN RAYA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tres en Raya</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Juego Tres En RAYA</h1>
-    </header>
+  <header>
+    <h1>Juego Tres En Raya</h1>
+  </header>
 
-    <main>
+  <main>
+    <!-- Formulario de registro -->
+    <section id="inicio">
+      <h2>Empezar a jugar</h2>
+      <form id="form-jugadores">
+        <label for="j1">Jugador 1 (X):</label>
+        <input type="text" id="j1" required>
 
-        <!-- Formulario de registro-->
-         <section id="inicio">
-            <h2>Empezar a Jugar</h2>
-            <form id="form-jugadores">
+        <label for="j2">Jugador 2 (O):</label>
+        <input type="text" id="j2" required>
 
-                <label for="j1">Jugador 1 (X):</label>
-                <input type="text" id="j1" required>
-                
-                <label for="j2">Jugador 2 (O):</label>
-                <input type="text" id="j2" required>
-                <h2></h2>
-                <label for="empezar">Quien Empieza:</label>
-                <select id="empezar">
-                    <option value="X">Jugador 1 (X)</option>
-                    <option value="O">Jugador 2 (O)</option>
-                </select>
+        <label for="empieza">Quién empieza:</label>
+        <select id="empieza">
+          <option value="X">Jugador 1 (X)</option>
+          <option value="O">Jugador 2 (O)</option>
+        </select>
 
-                <button type="submit">Iniciar Juego</button>
-            </form>
-         </section>
+        <button type="submit">Iniciar juego</button>
+      </form>
+    </section>
 
-         <!--Creacion del panel de juego-->
-         <section id="juego" hidden>
-            <div id="turno" aria-live="polite"></div>
-            <div id="tablero" role="grid"></div>
+    <!-- Panel de juego -->
+    <section id="juego" hidden>
+      <div id="turno" aria-live="polite"></div>
+      <div id="tablero" role="grid"></div>
 
-            <div class="botones">
-                <button id="boton_revancha">Revancha</button>
-                <button id="boton_nuevo">Juego Nuevo</button>
-            </div>
-         </section>
+      <div class="botones">
+        <button id="btn-revancha">Revancha</button>
+        <button id="btn-nuevo">Juego nuevo</button>
+      </div>
+    </section>
 
-         <!--Historial de partidas-->
-         <section id="historial">
-            <h2>Historial de partidas</h2>
+    <!-- Historial -->
+    <section id="historial">
+      <h2>Historial de partidas</h2>
 
-            <div class="filtros">
-                <label for="filtro-ganador">Ganador:</label>
-                <select id="filtro-ganador">
-                    <option value="todos">Todos</option>
-                    <option value="X">Jugador 1</option>
-                    <option value="O">Jugador 2</option>
-                    <option value="Empate">Empate</option>
-                </select>
+      <div class="filtros">
+        <label for="filtro-ganador">Ganador:</label>
+        <select id="filtro-ganador">
+          <option value="todos">Todos</option>
+          <option value="X">Jugador 1</option>
+          <option value="O">Jugador 2</option>
+          <option value="Empate">Empate</option>
+        </select>
 
-                <label for="filtro-inicio">Desde:</label>
-                <input type="date" id="filtro-inicio">
+        <label for="filtro-inicio">Desde:</label>
+        <input type="date" id="filtro-inicio">
 
-                <label for="filtro-fin">Hasta:</label>
-                <input type="date" id="filtro-fin">
+        <label for="filtro-fin">Hasta:</label>
+        <input type="date" id="filtro-fin">
 
-                <button id="btn-filtrar">Filtrar</button>
-            </div>
+        <button id="btn-filtrar">Filtrar</button>
+      </div>
 
-            <!--Creacion de una tabla de historial de partidas-->
-            <!--Contiene los datos de fecha, jugadores, ganador, duracion, movimientos-->
+      <table id="tabla_historial">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Jugador 1</th>
+            <th>Jugador 2</th>
+            <th>Ganador</th>
+            <th>Duración</th>
+            <th>Movimientos</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
 
-            <table id="tabla_historial">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Jugador 1</th>
-                        <th>Jugador 2</th>
-                        <th>Ganador</th>
-                        <th>Duracion</th>
-                        <th>Movimientos</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-
-          </section>
-    </main>
-    <script type="module" src="js/game.js"></script>
+  <script type="module" src="js/game.js"></script>
 </body>
 </html>
