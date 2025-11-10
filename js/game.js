@@ -80,9 +80,9 @@ function jugar(indice) {
     actualizarVista();
 
     if (verificarGanador()) {
-        terminarPartida(`${obtenerNombre(jugadorActual)} gana 🎉`);
+        terminarPartida(`${obtenerNombre(jugadorActual)} gana`);
     } else if (movimientos === 9) {
-        terminarPartida('Empate 😐');
+        terminarPartida('Empate');
     } else {
         jugadorActual = jugadorActual === 'X' ? 'O' : 'X';
         actualizarTurno();
