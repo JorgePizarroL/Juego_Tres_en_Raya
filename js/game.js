@@ -1,6 +1,6 @@
 import { guardarPartida, obtenerPartidas, limpiarHistorial, exportarJSON } from './storage.js';
 
-// Elementos del DOM
+
 const form = document.getElementById('form-jugadores');
 const tablero = document.getElementById('tablero');
 const turnoDiv = document.getElementById('turno');
